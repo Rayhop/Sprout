@@ -1,42 +1,45 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+:root {
+  /* ===============================
+     Primary Palette — Forest & Growth
+  ================================ */
+  --forest-deep: #16251c; /* Slightly richer, deeper forest */
+  --forest-mid: #1f3a2b; /* For gradient layering */
+  --growth-green: #4a6d55; /* Primary brand */
+  --growth-hover: #3d860b; /* Button hover state */
+  --sprout-light: #a8c69f; /* Accents & highlights */
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
+  /* ===============================
+     Accent Palette — Legacy & Light
+  ================================ */
+  --color-legacy-gold: #d4af37;
+  --color-gold-rich: #c89b2f; /* Slightly deeper gold for hover */
+  --color-gold-glow: rgba(212, 175, 55, 0.25);
+  --color-earth-warm: #f4f1ea;
+  --color-bark-brown: #3e2723;
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+  /* ===============================
+     UI States
+  ================================ */
+  --color-success: #3fa34d;
+  --color-warning: #c99700;
+  --color-error: #b23a48;
+  --color-dormant-brown: #8d6e63;
+  --color-sacred-white: #ffffff;
+  --color-border-soft: rgba(26, 47, 35, 0.08);
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
+  /* ===============================
+     Typography
+  ================================ */
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
 
-.card {
-  padding: 2em;
-}
+  /* ===============================
+     Shadows & Effects
+  ================================ */
+  --shadow-organic: 0 10px 30px rgba(26, 47, 35, 0.08);
+  --shadow-glow-gold: 0 0 40px rgba(212, 175, 55, 0.18);
+  --shadow-soft-elevated: 0 20px 50px rgba(22, 37, 28, 0.12);
 
-.read-the-docs {
-  color: #888;
+  --radius-soft: 24px;
+  --radius-card: 18px;
 }
