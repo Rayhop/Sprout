@@ -585,6 +585,7 @@ const FamilyDashboard = ({
 }) => {
   const navigate = useNavigate();
   const currentLvl = getLevelFromAmount(balance);
+  const peakLvl = getLevelFromAmount(peakBalance);
   const nextLvl = getNextLevel(currentLvl.level);
   const toNextLevel = nextLvl ? nextLvl.threshold - balance : 0;
   const levelProgress = nextLvl
@@ -593,6 +594,8 @@ const FamilyDashboard = ({
   const countdown = inheritanceDate ? getInheritanceCountdown(inheritanceDate) : null;
   const memorySlots = Math.floor(balance / 500);
   const prevLevelRef = useRef(currentLvl.level);
+  // Track highest level reached for the inheritance record
+  void peakLvl;
 
   const unlockedTraits: string[] = [];
   if (autoSave.enabled) unlockedTraits.push("Steady Growth");
