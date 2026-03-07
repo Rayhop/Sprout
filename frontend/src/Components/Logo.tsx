@@ -1,4 +1,4 @@
-import Image from "@/assets/sprout_logo.png";
+import Image from "@/assets/logo.png";
 const Logo = () => {
   return (
     <div>

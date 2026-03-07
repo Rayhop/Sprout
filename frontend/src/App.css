@@ -43,3 +43,13 @@
   --radius-soft: 24px;
   --radius-card: 18px;
 }
+
+body {
+  background-color: var(--forest-deep);
+  font-family: "Inter", sans-serif;
+}
+
+.heading {
+  font-family: "Playfair Display", serif;
+  /* font-weight: bold; */
+}

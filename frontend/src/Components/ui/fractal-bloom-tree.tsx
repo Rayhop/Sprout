@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { type Variants } from "framer-motion";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { ArrowRight, GitBranch } from "lucide-react";
 import Logo from "../Logo";
 
@@ -127,6 +128,7 @@ const FractalBloomCanvas: React.FC = () => {
 };
 
 const FractalBloomHero: React.FC = () => {
+  const navigate = useNavigate();
   const fadeUpVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: (i: number) => ({
@@ -141,7 +143,10 @@ const FractalBloomHero: React.FC = () => {
   };
 
   return (
-    <div className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-[#020617]">
+    <div
+      id="top"
+      className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-[#020617]"
+    >
       <FractalBloomCanvas />
 
       <div className="absolute top-2 left-2 z-20">
@@ -170,7 +175,7 @@ const FractalBloomHero: React.FC = () => {
           variants={fadeUpVariants}
           initial="hidden"
           animate="visible"
-          className="mb-6 bg-gradient-to-b from-white to-gray-400 bg-clip-text text-5xl font-bold tracking-tighter text-transparent md:text-7xl"
+          className="mb-6 bg-linear-to-b from-white to-gray-400 bg-clip-text text-5xl font-bold tracking-tighter text-transparent md:text-7xl"
         >
           Sprout{" "}
         </motion.h1>
@@ -194,11 +199,17 @@ const FractalBloomHero: React.FC = () => {
           animate="visible"
           className="sm:flex items-center gap-5 justify-center"
         >
-          <button className=" flex items-center gap-2 rounded-4xl font-extrabold bg-(--growth-green) px-8 py-4 text-white shadow-[0_0_20px_rgba(16,185,129,0.3)] transition-all duration-300 hover:bg-(--growth-hover) hover:scale-105">
+          <button
+            onClick={() => navigate("/onboarding/start")}
+            className=" flex items-center gap-2 rounded-4xl font-extrabold bg-(--growth-green) px-8 py-4 text-white shadow-[0_0_20px_rgba(16,185,129,0.3)] transition-all duration-300 hover:bg-(--growth-hover) hover:scale-105"
+          >
             Start Growing
             <ArrowRight className="h-5 w-5" />
           </button>
-          <button className="flex items-center gap-2 rounded-4xl px-8 py-4 font-semibold text-white shadow-[0_0_20px_rgba(16,185,129,0.3)] transition-all duration-500 hover:bg-(--growth-hover) hover:scale-105">
+          <button
+            onClick={() => navigate("/onboarding/family")}
+            className="flex items-center gap-2 rounded-4xl px-8 py-4 font-semibold text-white shadow-[0_0_20px_rgba(16,185,129,0.3)] transition-all duration-500 hover:bg-(--growth-hover) hover:scale-105"
+          >
             Build a Family Tree
             <ArrowRight className="h-5 w-5" />
           </button>
